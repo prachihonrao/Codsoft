@@ -1,0 +1,50 @@
+import java.util.Scanner;
+public class StudentGrade {
+    public static void main(String arg[]) {
+        int english, marathi, hindi, maths, science, socialscience;
+        int totalmarks;
+        double avg_percentage;
+        int totalsubjects;
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter english marks out of 100:");
+        english = sc.nextInt();
+        System.out.println("Enter marathi marks out of 100:");
+        marathi = sc.nextInt();
+        System.out.println("Enter hindi marks out of 100:");
+        hindi = sc.nextInt();
+        System.out.println("Enter maths marks out of 100:");
+        maths = sc.nextInt(); 
+        System.out.println("Enter science marks out of 100:");
+        science = sc.nextInt();
+        System.out.println("Enter social science marks out of 100");
+        socialscience = sc.nextInt();
+        System.out.println("enter the total number of subjects");
+        totalsubjects = sc.nextInt();
+        totalmarks = english + marathi + hindi + maths + science + socialscience;
+        System.out.println("The total marks of all subjects out of 600 is: " + totalmarks);
+        avg_percentage = (totalmarks / totalsubjects);
+        System.out.println("Average percentage: " + avg_percentage);
+        char grade = calculateGrade(avg_percentage);
+        System.out.println("Grade: " + grade);
+        sc.close();
+    }
+
+    public static char calculateGrade(double avg_percentage) {
+        if (avg_percentage >= 90) {
+            return 'A';
+        } else if (avg_percentage >= 80) {
+            return 'B';
+        } else if (avg_percentage >= 70) {
+            return 'C';
+        } else if (avg_percentage >= 60) {
+            return 'D';
+        } else if (avg_percentage >= 50) {
+            return 'E';
+        } else {
+            return 'F';
+        }
+
+    }
+
+}
